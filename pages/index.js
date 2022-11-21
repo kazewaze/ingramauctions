@@ -9,12 +9,7 @@ import LoggedInHome from '../components/loggedInHome'
 
 export default () => {
 //  const router = useRouter();
-  const { user, error, isLoading } = useUser();
-
-  // Replace with loading component later.
-  if (isLoading) return <div>Loading...</div>;
-
-  if (error) return <div>{error.message}</div>;
+// const { user, error, isLoading } = useUser();
 
   if (user) {
     return (
