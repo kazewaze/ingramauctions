@@ -20,17 +20,26 @@ function MenuButton() {
   )
 }
 
-function MobileMenu() {
+function MobileMenu({ loggedIn }) {
   return (
     <div id={styles.mobileMenu}>
       <ul className={styles.mobileMenuInner}>
         { links }
+        { loggedIn ? (
+            <li key={"LogoutKey"}>
+              <Link href="/api/auth/logout">Logout</Link>
+            </li>
+            ) : (
+              <li key={"LoginKey"}>
+                <Link href="/api/auth/login">Login</Link>
+              </li>
+          )}
       </ul>
     </div>
   )
 }
 
-export default function Header() {
+export default function Header({ loggedIn }) {
   return (
       <header className={styles.header}>
         <nav className={styles.nav}>
@@ -44,6 +53,15 @@ export default function Header() {
           <hr className={styles.hLine}/>
           <ul className={styles.links}>
             { links }
+            { loggedIn ? (
+            <li key={"LogoutKey"}>
+              <Link href="/api/auth/logout">Logout</Link>
+            </li>
+            ) : (
+              <li key={"LoginKey"}>
+                <Link href="/api/auth/login">Login</Link>
+              </li>
+          )}
           </ul>
           <MenuButton />
           <MobileMenu />
