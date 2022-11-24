@@ -23,7 +23,7 @@ export default function Footer({ loggedIn }) {
             </li>
             ) : (
               <li key={"LoginKey"}>
-                <Link href="/api/auth/login">Login</Link>
+                <a href="https://dev-hrdwlhgoxpk8pirr.us.auth0.com/api/auth/login">Login</a>
               </li>
           )}
       </ul>
